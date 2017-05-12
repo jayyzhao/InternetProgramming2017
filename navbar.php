@@ -39,10 +39,10 @@
           }
 
           if($request_uri == "/~jozhao/contact.php"){
-            echo '<li class="actiive"><a href="flights.php">Contact Us</a></li>';
+            echo '<li class="actiive"><a href="contact.php">Contact Us</a></li>';
           }
           else{
-            echo '<li><a href="flights.php">Contact Us</a></li>';
+            echo '<li><a href="contact.php">Contact Us</a></li>';
           }
 
           if($request_uri == "/~jozhao/aboutus.php"){
