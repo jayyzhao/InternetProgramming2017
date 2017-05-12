@@ -186,7 +186,7 @@ if(isset($_POST['formSubmit'])){
                 </table>
               </div>
                 <div class="col-md-7 col-xs-offset-8">
-                  <button type="" class="btn btn-primary">New Search</button>
+                  <a href="flights.php" class="btn btn-primary">New Search</a>
                   <button type="button" onclick="return checkCheckBoxes();" class="btn btn-primary">Choose Seats</button>
                 </div>
               </form>

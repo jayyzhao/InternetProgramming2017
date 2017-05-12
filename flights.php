@@ -120,7 +120,20 @@
   //
   // }
 
+function checkToFrom(){
+  var selectedDeparture = document.getElementById("departFrom");
+  var selectedDepartureValue = selectedDeparture.options[selectedDeparture.selectedIndex].value;
 
+  var selectedDeestination = document.getElementById("destination");
+  var selectedDestinationValue = selectedDeestination.options[selectedDeestination.selectedIndex].value;
+
+  if(selectedDestinationValue == "selectDestination" && selectedDepartureValue == "selectDeparture"){
+    alert("Please Select at least Departure or Destination City!");
+  }
+  else{
+    document.getElementById('searchFlights').submit();
+  }
+}
 </script>
 
   <body>
@@ -138,7 +151,7 @@
       <div class="col-md-2">
       </div>
 
-    <form class="form-inline" action="searchFlights.php" method="POST">
+    <form class="form-inline" id="searchFlights" action="searchFlights.php" method="POST">
       <input type="hidden" name="formSubmit" value="1"/>
       <div class="col-md-8">
         <div class="col-md-6">
@@ -162,7 +175,7 @@
         </div>
       </div><br/>
       <div class="col-md-2">
-        <button type="submit" class="btn btn-primary pull-right">Search</button>
+        <button type="button" onclick="return checkToFrom();" class="btn btn-primary pull-right">Search</button>
       </div>
 
       </form>
