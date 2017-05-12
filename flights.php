@@ -160,9 +160,9 @@
             </select>
           </div>
         </div>
-      </div>
-      <div class="col-md-1">
-        <button type="submit" class="btn btn-primary">Search</button>
+      </div><br/>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-primary pull-right">Search</button>
       </div>
 
       </form>

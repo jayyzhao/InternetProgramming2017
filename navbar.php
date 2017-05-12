@@ -37,6 +37,21 @@
           else{
             echo '<li><a href="flights.php">Search Flights</a></li>';
           }
+
+          if($request_uri == "/~jozhao/contact.php"){
+            echo '<li class="actiive"><a href="flights.php">Contact Us</a></li>';
+          }
+          else{
+            echo '<li><a href="flights.php">Contact Us</a></li>';
+          }
+
+          if($request_uri == "/~jozhao/aboutus.php"){
+            echo '<li class="actiive"><a href="flights.php">About Us</a></li>';
+          }
+          else{
+            echo '<li><a href="flights.php">About Us</a></li>';
+          }
+
         ?>
 
       </ul>

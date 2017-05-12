@@ -1,7 +1,7 @@
 body {
     min-height: 100%;
     padding-top: 70px;
-    background-color: #333;
+    background-color: #fff;
 }
 
 .page-content {
@@ -51,6 +51,7 @@ label {
 }
 
 input, select {
+    
     display: inline-block!important;
     width: 100%;
 }

@@ -100,7 +100,26 @@ include('config/database.php');
 //   }
 //
 // }
+?>
+<script>
+function checkCheckBoxes() {
+  checkboxes = document.getElementsByName('options[]');
+  var checked = false;
+  for(var i=0, n=checkboxes.length;i<n;i++) {
+    if(checkboxes[i].checked){
+      checked = true;
+    }
+  }
 
+  if(checked){
+    document.getElementById('flightsForm').submit();
+  }
+  else{
+    alert("Please Select a Flight!")
+  }
+}
+</script>
+<?php
 if(isset($_POST['formSubmit'])){
   if($_POST['formSubmit'] == 1){
 
@@ -117,7 +136,7 @@ if(isset($_POST['formSubmit'])){
         </div>
 
         <div class="col-md-8">
-          <form class="form-inline" action="chooseSeats.php" method="POST">
+          <form id="flightsForm" class="form-inline" action="chooseSeats.php" method="POST">
           <div class="table-responsive">';
 
       if($_POST['departFrom'] == "selectDeparture" && $_POST['destination'] == "selectDestination"){
@@ -155,8 +174,8 @@ if(isset($_POST['formSubmit'])){
             echo '<td style="text-align:center">' . $searchFlightsRows['to_city'] . '</td>';
             echo '<td style="text-align:center"> $' . $searchFlightsRows['price'] . '</td>';
             echo '<td style="text-align:center">';
-            echo '<div class="checkbox">';
-            echo '<label><input type="checkbox" name="options[]" value="' . $searchFlightsRows['from_city'] . ',' . $searchFlightsRows['to_city'] . ',' . $searchFlightsRows['price'] . '"></label>';
+            echo '<div class="">';
+            echo '<label><input type="checkbox" id="flightCheckBoxes" name="options[]" value="' . $searchFlightsRows['from_city'] . ',' . $searchFlightsRows['to_city'] . ',' . $searchFlightsRows['price'] . '"></label>';
             echo '</div>';
             echo '</td>';
           echo '</tr>';
@@ -168,7 +187,7 @@ if(isset($_POST['formSubmit'])){
               </div>
                 <div class="col-md-7 col-xs-offset-8">
                   <button type="" class="btn btn-primary">New Search</button>
-                  <button type="submit" class="btn btn-primary">Choose Seats</button>
+                  <button type="button" onclick="return checkCheckBoxes();" class="btn btn-primary">Choose Seats</button>
                 </div>
               </form>
             </div>
