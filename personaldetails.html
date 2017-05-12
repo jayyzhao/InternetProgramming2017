@@ -1,0 +1,65 @@
+<html>
+    <title>Complete Booking - Personal Details</title>
+    <!-- Custom styles for this Online Travel Agency -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/formvalidation.js"></script>
+	</head>
+ 	<body>
+ 	<!-- Fixed navbar -->
+    <?php
+      include('navbar.php')
+    ?>
+    
+ 		<div class="header">Personal Details</div>
+ 		<div class="content">Please complete your details</div>
+ 		<div class="personalDetails col-md-8">
+	 		<form class="personal-details" id="personal-details" name="personal-details"
+	 		action="payment.php"
+	 		method="POST"
+	 		>
+		 		<div class="form-group">
+			 		<div class="datafield firstname">
+			 			<label>First Name</label>
+			 			<input class="form-control" id="firstname" name="firstname" placeholder="First Name" required onchange="return validateForm()">
+			 		</div>
+			 		<div class="datafield lastname">
+			 			<label>Last Name</label>
+			 			<input class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
+			 		</div>
+			 		<div class="datafield firstname">
+			 			<label>Email Address</label>
+			 			<input class="form-control" id="email" name="email" placeholder="Email" required>
+			 		</div>
+			 		<div class="datafield address1">
+			 			<label>Address Line 1</label>
+			 			<input class="form-control" id="address1" name="address1" placeholder="Address Line 1" required>
+			 		</div>
+			 		<div class="datafield address2">
+			 			<label>Address Line 2</label>
+			 			<input class="form-control" id="address2" name="address2" placeholder="Address Line 2">
+			 		</div>
+			 		<div class="datafield suburb">
+			 			<label>Suburb</label>
+			 			<input class="form-control" id="suburb" name="suburb" placeholder="Suburb">
+			 		</div>
+			 		<div class="datafield State">
+			 			<label>State</label>
+			 			<select class="form-control" id="state" name="state" placeholder="State">
+			 				<option value ng-bind="placeholder">State</option>
+			 				<option value="NSW">New South Wales</option>
+							<option value="QLD">Queensland</option>
+							<option value="SA">South Australia</option>
+							<option value="TAS">Tasmania</option>
+							<option value="VIC">Victoria</option>
+							<option value="WA">Western Australia</option>
+						</select>
+			 		</div>
+			 	</div>
+			 	<input type="submit" name="submit" value="Proceed to Payment">
+	 		</form>
+	 	</div>
+	</body>
+</html>

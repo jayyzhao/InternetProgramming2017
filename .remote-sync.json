@@ -1,0 +1,16 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "rerun.it.uts.edu.au",
+  "port": "22",
+  "target": "/home/jozhao/public_html",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "jozhao",
+  "password": "280493jz",
+  "watch": [],
+  "transport": "scp"
+}

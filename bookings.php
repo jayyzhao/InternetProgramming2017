@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  session_start()
   echo "<html>";
   include('header.php');
 ?>
@@ -14,12 +14,6 @@
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Online Travel Agency</h1>
-        <h2>Internet Programming Autumn 2017</h2>
-        <p>This is website is created for Internet Programming Assignment 1 - Autumn 2017.</p>
-        <p>Please choose Book in the menu navigation to book a flight.</p>
-      </div>
 
     </div> <!-- /container -->
     <!-- Bootstrap core JavaScript

@@ -1,0 +1,66 @@
+body {
+    min-height: 100%;
+    padding-top: 70px;
+    background-color: #333;
+}
+
+.page-content {
+    background: #fff;
+    padding: 20px;
+}
+
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    float: none!important;
+    margin: 0 auto;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content {
+    padding: 10px 0;
+}
+
+/* Nav Bar */
+.navbar-header {
+    height: 60px;
+    display: inline-block;
+}
+
+.navbar-header img {
+    height: 100%;
+}
+
+/*Personal Details */
+
+.form-group {
+    font-size: 0;
+}
+
+.datafield {
+    padding: 5px 20px 5px 0;
+    display: inline-block;
+}
+
+
+label {
+	width: 100%;
+    font-size: 14px;
+}
+
+input, select {
+    display: inline-block!important;
+    width: 100%;
+}
+
+/* Payment */
+#expiryYear {
+    width: 50%;
+}
+
+#expiryMonth {
+    margin-right: 10px;
+    width: calc(50% - 10px);
+}
