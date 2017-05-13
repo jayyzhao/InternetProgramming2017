@@ -1,17 +1,26 @@
 <?php
-  session_start()
+  session_start();
   echo "<html>";
   include('header.php');
+
+  if($_POST['addBooking'] == 1){
+    
+  }
 ?>
+
+
 
   <body>
 
     <!-- Fixed navbar -->
     <?php
-      include('navbar.php')
+      include('navbar.php');
     ?>
 
     <div class="container">
+      <?php if(!isset($_SESSION['flights'])){
+        echo "You Have No Bookings!";
+      } ?>
 
       <!-- Main component for a primary marketing message or call to action -->
 
