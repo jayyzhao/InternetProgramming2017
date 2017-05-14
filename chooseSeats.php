@@ -4,6 +4,8 @@ echo "<html>";
 include('header.php');
 include('config/database.php');
 include('navbar.php');
+
+$_SESSION['currentFlights'] = $_POST['options'];
 ?>
 <script>
 
@@ -104,6 +106,40 @@ function clearFlights(){
   xhttp.send();
 
 }
+function addToBooking(){
+  var totalFlights = document.getElementById('totalFlights').value;
+
+  var totalSeatsCheck = false;
+
+  for(i=1; i<=totalFlights; i++){
+
+    if(document.getElementById('numberOfSeats_' + i).innerHTML > 0 && i == 1){
+      totalSeatsCheck = true;
+    }
+    else if(document.getElementById('numberOfSeats_' + i).innerHTML > 0 && totalSeatsCheck == false){
+      totalSeatsCheck = false;
+    }
+    else if(document.getElementById('numberOfSeats_' + i).innerHTML > 0 && totalSeatsCheck == true){
+      totalSeatsCheck = true;
+    }
+    else{
+      totalSeatsCheck = false;
+    }
+
+  }
+
+
+  if(totalSeatsCheck){
+    var form=document.getElementById('searchFlights');
+    form.action='bookings.php';
+    form.submit();
+    form.action='payment.php';
+  }
+  else{
+    alert("Please Select a Seat for Each Flight");
+  }
+
+}
 </script>
 
  <div class="container">
@@ -164,19 +200,19 @@ function clearFlights(){
                 </div>
 
 
-
               </div>';
 
         $i++;
 
       }
+      echo '<input type="hidden" id="totalFlights" name="totalFlights" value="'. sizeOf($_POST['options'])   . '"/>';
    ?><br/>
    <div class="col-md-12">
      Total Number of Seat: <span id="totalNumberOfSeats" class="numberOfSeats">0</span>
    </div>
  <div class="col-md-4">
    <button type="button" onclick="return clearFlights();" class="btn btn-primary pull-right">Clear All Booked Flights</button>
-   <button type="button" onclick="return checkToFrom();" class="btn btn-primary pull-right">Book Another Flight</button>
+   <button type="button" onclick="return addToBooking();" class="btn btn-primary pull-right">Book Another Flight</button>
    <button type="button" onclick="return checkToFrom();" class="btn btn-primary pull-right">Proceed to Payment</button>
  </div>
  </form>
