@@ -30,12 +30,12 @@
 		 		<div class="form-group">
 			 		<div class="datafield firstName col-md-3">
 			 			<label>First Name</label>
-			 			<input class="form-control" id="firstname" name="firstname" placeholder="First Name" required pattern="([A-Z]|[a-z])+">
+			 			<input class="form-control" id="firstname" name="firstname" placeholder="First Name" required pattern="([A-Za-z ])+">
 			 			<span class="tooltip">Please enter your name</span>
 			 		</div>
 			 		<div class="datafield lastName col-md-3">
 			 			<label>Last Name</label>
-			 			<input class="form-control" id="lastname" name="lastname" placeholder="Last Name" required pattern="([A-Z]|[a-z])+">
+			 			<input class="form-control" id="lastname" name="lastname" placeholder="Last Name" required pattern="([A-Za-z ])+">
 			 		</div>
 			 		<div class="datafield email col-md-6">
 			 			<label>Email Address</label>
