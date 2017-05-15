@@ -84,7 +84,7 @@
 
                     <div class="datafield cvc col-md-3">
                         <label>CVC</label>
-                        <input class="form-control" id="cvc" name="cvc" placeholder="CVC" type="password" required pattern="^\d{4}$" maxlength="4">
+                        <input class="form-control" id="cvc" name="cvc" placeholder="CVC" type="password" required pattern="^\d{3}$" maxlength="3">
                     </div>
                 </div>
                 <input type="submit" name="submit" value="Review Booking">
