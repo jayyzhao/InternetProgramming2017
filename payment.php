@@ -51,7 +51,7 @@
 
                     <div class="datafield cardNumber col-md-3">
                         <label>Card Number</label>
-                        <input class="form-control" id="cardNumber" name="cardNumber" placeholder="Card Number" required pattern="^\d{16}$">
+                        <input class="form-control" id="cardNumber" name="cardNumber" placeholder="Card Number" required pattern="^\d{12}$">
                     </div>
 
                     <div class="datafield expiryDate col-md-3" id="expiryDate">
@@ -84,7 +84,7 @@
 
                     <div class="datafield cvc col-md-3">
                         <label>CVC</label>
-                        <input class="form-control" id="cvc" name="cvc" placeholder="CVC" type="password" required pattern="^\d{3}$" maxlength="3">
+                        <input class="form-control" id="cvc" name="cvc" placeholder="CVC" type="password" required pattern="^\d{4}$" maxlength="4">
                     </div>
                 </div>
                 <input type="submit" name="submit" value="Review Booking">
@@ -102,8 +102,4 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>p
->>>>>>> origin/master

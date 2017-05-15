@@ -35,6 +35,53 @@
         <div class="header">Booking Details</div>
         <div class="content">
             <p>Details of your flights are below. Click "Confirm Payment" to complete booking.</p>
+            <?
+            $i = 1;
+            foreach($_SESSION['flightBooking'] as $flights=>$seats){
+              $flightDetails = explode("," , $flights);
+              $selectedTicket = 0;
+              $child = 0;
+              $wheelchair = 0;
+              $specialDiet = 0;
+              for($j = 0; $j < sizeOf($seats); $j++){
+                if($seats[$j] == "selectTicket"){
+                  $selectedTicket++;
+                }
+                else if($seats[$j] == "child"){
+                  $child++;
+                }
+                else if($seats[$j] == "wheelchair"){
+                  $wheelchair++;
+                }
+                else if($seats[$j] == "specialDiet"){
+                  $specialDiet++;
+                }
+              }
+              echo '<div class="well">
+                      <h3>Flight #' . $i . ' - From: ' . $flightDetails[0] . ' To: ' . $flightDetails[1] . '</h3><br/>';
+
+              if($selectedTicket > 0){
+                echo 'Selected Ticket:' . $selectedTicket . '<br/>';
+              }
+              if($child > 0){
+                echo 'Child:' . $child . '<br/>';
+              }
+              if($wheelchair){
+                echo 'Wheelchair:' . $wheelchair . '<br/>';
+              }
+              if($specialDiet){
+                echo 'Special Diet:' . $specialDiet . '<br/>';
+              }
+              echo '<h2>Total Price: $' . ($selectedTicket + $wheelchair+$child+$specialDiet) * $flightDetails[2] . '.00';
+              echo '      </div>';
+              $i++;
+              $selectedTicket = 0;
+              $child = 0;
+              $wheelchair = 0;
+              $specialDiet = 0;
+            }
+          ?>
+
             <form class="payment-details" id="personal-details" name="personal-details"
                 action="confirmation.php"
                 method="POST"
@@ -43,7 +90,7 @@
             </div>
             <input type="submit" name="submit" value="Confirm Payment">
         </form>
-        
+
     </div>
 
     <!-- Bootstrap core JavaScript
