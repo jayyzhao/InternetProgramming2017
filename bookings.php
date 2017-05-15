@@ -4,30 +4,146 @@
   include('header.php');
 
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-    if(isset($_SESSION['flightBooking'])){
-
-      // print_r($_SESSION['flightBooking']);
+    if(isset($_SESSION['flightBooking']) && $_SESSION['lastBookingID'] == $_POST['bookingid']){
+      echo "Please do not Resubmit the form";
     }
-    else{
+    elseif(isset($_SESSION['flightBooking'])){
+      $_SESSION['lastBookingID'] = $_POST['bookingid'];
+      print_r($_SESSION['lastBookingID']);
+      // print_r($_SESSION['flightBooking']);
+      // echo "new";
+      //
       for($i=1; $i <= $_POST['totalFlights']; $i++){
-        //check flgith Row A
-        $flightSeatArray = $_POST["flight_" . $i . "_row_a"];
-        if(isset($flightSeatArray)){
+      // //   //check flgith Row A
+
+        if(isset($_POST["flight_" . $i . "_row_a"])){
+          $flightSeatArray = $_POST["flight_" . $i . "_row_a"];
           for($j=0; $j < sizeOf($flightSeatArray); $j++){
-            //echo "SEAT FOUND";
-            //print_r($flightSeatArray[$j]);
+            print_r($flightSeatArray[$j]);
             $k = $i -1;
             $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray[$j];
           }
-
-
         }
+        if(isset($_POST["flight_" . $i . "_row_b"])){
+          $flightSeatArray_B = $_POST["flight_" . $i . "_row_b"];
+          for($j=0; $j < sizeOf($flightSeatArray_B); $j++){
+            //echo "SEAT FOUND";
+            //print_r($flightSeatArray[$j]);
+            $k = $i -1;
+            $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray_B[$j];
+          }
+        }
+
+        if(isset($_POST["flight_" . $i . "_row_c"])){
+			      $flightSeatArray_C = $_POST["flight_" . $i . "_row_c"];
+            for($j=0; $j < sizeOf($flightSeatArray_C); $j++){
+              //echo "SEAT FOUND";
+              //print_r($flightSeatArray[$j]);
+              $k = $i -1;
+              $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray_C[$j];
+            }
+          }
+          if(isset($_POST["flight_" . $i . "_row_d"])){
+			        $flightSeatArray_D = $_POST["flight_" . $i . "_row_d"];
+              for($j=0; $j < sizeOf($flightSeatArray_D); $j++){
+                //echo "SEAT FOUND";
+                //print_r($flightSeatArray[$j]);
+                $k = $i -1;
+                $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray_D[$j];
+              }
+          }
+          if(isset($_POST["flight_" . $i . "_row_e"])){
+		        $flightSeatArray_E = $_POST["flight_" . $i . "_row_e"];
+            for($j=0; $j < sizeOf($flightSeatArray_E); $j++){
+            //echo "SEAT FOUND";
+            //print_r($flightSeatArray[$j]);
+              $k = $i -1;
+              $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray_E[$j];
+            }
+          }
+
+
+      }
+    }
+    else{
+      $_SESSION['lastBookingID'] = $_POST['bookingid'];
+      for($i=1; $i <= $_POST['totalFlights']; $i++){
+        //check flgith Row A]
+
+        if(isset($_POST["flight_" . $i . "_row_a"])){
+          $flightSeatArray_A = $_POST["flight_" . $i . "_row_a"];
+          for($j=0; $j < sizeOf($flightSeatArray_A); $j++){
+            //echo "SEAT FOUND";
+            //print_r($flightSeatArray[$j]);
+            $k = $i -1;
+            $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray_A[$j];
+          }
+        }
+
+        if(isset($_POST["flight_" . $i . "_row_b"])){
+          $flightSeatArray_B = $_POST["flight_" . $i . "_row_b"];
+          for($j=0; $j < sizeOf($flightSeatArray_B); $j++){
+            //echo "SEAT FOUND";
+            //print_r($flightSeatArray[$j]);
+            $k = $i -1;
+            $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray_B[$j];
+          }
+        }
+
+        if(isset($_POST["flight_" . $i . "_row_c"])){
+			      $flightSeatArray_C = $_POST["flight_" . $i . "_row_c"];
+            for($j=0; $j < sizeOf($flightSeatArray_C); $j++){
+              //echo "SEAT FOUND";
+              //print_r($flightSeatArray[$j]);
+              $k = $i -1;
+              $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray_C[$j];
+            }
+          }
+          if(isset($_POST["flight_" . $i . "_row_d"])){
+			        $flightSeatArray_D = $_POST["flight_" . $i . "_row_d"];
+              for($j=0; $j < sizeOf($flightSeatArray_D); $j++){
+                //echo "SEAT FOUND";
+                //print_r($flightSeatArray[$j]);
+                $k = $i -1;
+                $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray_D[$j];
+              }
+          }
+          if(isset($_POST["flight_" . $i . "_row_e"])){
+		        $flightSeatArray_E = $_POST["flight_" . $i . "_row_e"];
+            for($j=0; $j < sizeOf($flightSeatArray_E); $j++){
+            //echo "SEAT FOUND";
+            //print_r($flightSeatArray[$j]);
+              $k = $i -1;
+              $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray_E[$j];
+            }
+          }
+
+
       }
     }
   }
 ?>
+<script>
+function clearFlights(){
 
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         window.location = 'bookings.php';
+      }
+  };
+  xhttp.open("GET", "clearFlights.php", true);
+  xhttp.send();
+
+}
+function proceedToPay(){
+  var form=document.getElementById('searchFlights');
+  form.submit();
+}
+function bookMoreFlights(){
+  window.location = 'flights.php';
+}
+</script>
 
 
   <body>
@@ -84,6 +200,13 @@
 
       }
       ?>
+
+      <form class="form-inline" id="searchFlights" action="personaldetails.php" method="POST">
+        <?php echo '<input type="hidden" id="bookingid" name="bookingid" value="'. rand()   . '"/>';?>
+        <button type="button" onclick="return clearFlights();" class="btn btn-primary pull-right">Clear All Booked Flights</button>
+        <button type="button" onclick="return proceedToPay();" class="btn btn-primary pull-right">Proceed to Checkout</button>
+        <button type="button" onclick="return bookMoreFlights();" class="btn btn-primary pull-right">Book More Flights</button>
+      </form>
 
       <!-- Main component for a primary marketing message or call to action -->
 

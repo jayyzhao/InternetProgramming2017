@@ -12,7 +12,7 @@
 
     <?php
     //Redirect to sunshine.php if BOOKINGID not set.
-    if(!isset($_SESSION["bookingid"])){
+    if(!isset($_POST["bookingid"])){
         header("Location: index.php");
         die();
         }
@@ -84,7 +84,7 @@
 						    <option value="Argentina">Argentina</option>
 						    <option value="Armenia">Armenia</option>
 						    <option value="Aruba">Aruba</option>
-						    <option value="Australia">Australia</option>
+						    <option value="Australia" selected>Australia</option>
 						    <option value="Austria">Austria</option>
 						    <option value="Azerbaijan">Azerbaijan</option>
 						    <option value="Bahamas">Bahamas</option>
@@ -251,12 +251,12 @@
 						    <option value="Romania">Romania</option>
 						    <option value="Russia">Russian Federation</option>
 						    <option value="Rwanda">Rwanda</option>
-						    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option> 
+						    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
 						    <option value="Saint LUCIA">Saint LUCIA</option>
 						    <option value="Saint Vincent">Saint Vincent and the Grenadines</option>
 						    <option value="Samoa">Samoa</option>
 						    <option value="San Marino">San Marino</option>
-						    <option value="Sao Tome and Principe">Sao Tome and Principe</option> 
+						    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
 						    <option value="Saudi Arabia">Saudi Arabia</option>
 						    <option value="Senegal">Senegal</option>
 						    <option value="Seychelles">Seychelles</option>

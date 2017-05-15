@@ -94,18 +94,7 @@ function checkSeats(numberOfFlights){
 
 
 }
-function clearFlights(){
 
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-         window.location = 'bookings.php';
-      }
-  };
-  xhttp.open("GET", "clearFlights.php", true);
-  xhttp.send();
-
-}
 function addToBooking(){
   var totalFlights = document.getElementById('totalFlights').value;
 
@@ -206,14 +195,13 @@ function addToBooking(){
 
       }
       echo '<input type="hidden" id="totalFlights" name="totalFlights" value="'. sizeOf($_POST['options'])   . '"/>';
+      echo '<input type="hidden" id="bookingid" name="bookingid" value="'. rand()   . '"/>';
    ?><br/>
    <div class="col-md-12">
      Total Number of Seat: <span id="totalNumberOfSeats" class="numberOfSeats">0</span>
    </div>
- <div class="col-md-4">
-   <button type="button" onclick="return clearFlights();" class="btn btn-primary pull-right">Clear All Booked Flights</button>
-   <button type="button" onclick="return addToBooking();" class="btn btn-primary pull-right">Book Another Flight</button>
-   <button type="button" onclick="return checkToFrom();" class="btn btn-primary pull-right">Proceed to Payment</button>
+ <div class="col-md-6">
+   <button type="button" onclick="return addToBooking();" class="btn btn-primary pull-right">Add to Booking</button>
  </div>
  </form>
  </div>
