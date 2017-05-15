@@ -97,7 +97,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/cardvalidation.js" type="text/javascript">
-        
+
     </script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

@@ -15,7 +15,10 @@
     if(!isset($_POST["bookingid"])){
         header("Location: index.php");
         die();
-        }
+    }
+    else {
+      $_SESSION["bookingid"] = $_POST["bookingid"];
+    }
     ?>
 
     <div class="page-content col-md-10">
