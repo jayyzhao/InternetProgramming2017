@@ -9,7 +9,6 @@
     }
     elseif(isset($_SESSION['flightBooking'])){
       $_SESSION['lastBookingID'] = $_POST['bookingid'];
-      print_r($_SESSION['lastBookingID']);
       // print_r($_SESSION['flightBooking']);
       // echo "new";
       //
@@ -19,7 +18,6 @@
         if(isset($_POST["flight_" . $i . "_row_a"])){
           $flightSeatArray = $_POST["flight_" . $i . "_row_a"];
           for($j=0; $j < sizeOf($flightSeatArray); $j++){
-            print_r($flightSeatArray[$j]);
             $k = $i -1;
             $_SESSION['flightBooking'][$_SESSION['currentFlights'][$k]][] = $flightSeatArray[$j];
           }
@@ -157,6 +155,10 @@ function bookMoreFlights(){
       <?php
       if(!isset($_SESSION['flightBooking'])){
         echo "You Have No Bookings!";
+        echo '<form class="form-inline" id="searchFlights" action="personaldetails.php" method="POST">';
+        echo '<input type="hidden" id="bookingid" name="bookingid" value="'. rand()   . '"/>';
+        echo '<button type="button" onclick="return bookMoreFlights();" class="btn btn-primary pull-right">Book a Flight</button>';
+        echo '</form>';
       }
       else{
         echo '<div class="col-md-12">
@@ -198,15 +200,17 @@ function bookMoreFlights(){
           $specialDiet = 0;
         }
 
+        echo '<form class="form-inline" id="searchFlights" action="personaldetails.php" method="POST">';
+        echo '<input type="hidden" id="bookingid" name="bookingid" value="'. rand()   . '"/>';
+        echo '<button type="button" onclick="return clearFlights();" class="btn btn-primary pull-right">Clear All Booked Flights</button>';
+        echo '<button type="button" onclick="return proceedToPay();" class="btn btn-primary pull-right">Proceed to Checkout</button>';
+        echo '<button type="button" onclick="return bookMoreFlights();" class="btn btn-primary pull-right">Book More Flights</button>';
+        echo '</form>';
+
       }
+
       ?>
 
-      <form class="form-inline" id="searchFlights" action="personaldetails.php" method="POST">
-        <?php echo '<input type="hidden" id="bookingid" name="bookingid" value="'. rand()   . '"/>';?>
-        <button type="button" onclick="return clearFlights();" class="btn btn-primary pull-right">Clear All Booked Flights</button>
-        <button type="button" onclick="return proceedToPay();" class="btn btn-primary pull-right">Proceed to Checkout</button>
-        <button type="button" onclick="return bookMoreFlights();" class="btn btn-primary pull-right">Book More Flights</button>
-      </form>
 
       <!-- Main component for a primary marketing message or call to action -->
 

@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">IP - Online Travel Agency</a>
+      <a class="navbar-brand" href="index.php">IP - Online Travel Agency</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -49,7 +49,7 @@
             echo '<li class="actiive"><a href="flights.php">About Us</a></li>';
           }
           else{
-            echo '<li><a href="flights.php">About Us</a></li>';
+            echo '<li><a href="aboutus.php">About Us</a></li>';
           }
 
         ?>
