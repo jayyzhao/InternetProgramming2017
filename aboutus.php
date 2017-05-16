@@ -11,15 +11,21 @@
       include('navbar.php')
     ?>
 
-    <div class="container">
+    <div class="page-content col-md-10">
 
+       
+    
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="well">
-        <h1>Online Travel Agency</h1>
-        <h2>Internet Programming Autumn 2017</h2>
-        <p>This is website is created by:</p>
-        <p>11214386 - JONATHAN ZHAO</p>
-        <p>12663795 - ALICE MAI TU</p>
+      <div class="well" style="text-align: center; line-height: 2;">
+        <div class="header">About this Website</div>
+        <div class="content">
+          This website is the submission for UTS's Internet Programming course, Autumn 2017<br/>
+          This is website is created by<br>
+          11214386 - JONATHAN ZHAO<br/>
+          12663795 - HOANG MAI TU
+        </div>
+
+        
       </div>
 
     </div> <!-- /container -->

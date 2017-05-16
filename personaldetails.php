@@ -33,7 +33,8 @@
 		 		<div class="form-group">
 			 		<div class="datafield firstName col-md-3">
 			 			<label>First Name</label>
-			 			<input class="form-control" id="firstname" name="firstname" placeholder="First Name" required pattern="([A-Za-z ])+">
+			 			<input class="form-control" id="firstname" name="firstname" placeholder="First Name" required pattern="([A-Za-z ])+" oninvalid="this.setCustomValidity('Please enter your name')"
+    oninput="setCustomValidity('')">
 			 			<span class="tooltip">Please enter your name</span>
 			 		</div>
 			 		<div class="datafield lastName col-md-3">
@@ -317,7 +318,8 @@
 						</select>
 			 		</div>
 			 	</div>
-			 	<input type="submit" name="submit" value="Proceed to Payment">
+			 	<div class="optionalNote">State and Postcode are optional for booking from outside Australia</div>
+			 	<button type="submit" class="btn btn-primary" name="submitDetails" value="Submit">Proceed to Payment</button>
 	 		</form>
 	 	</div>
     </div>

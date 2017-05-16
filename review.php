@@ -88,7 +88,7 @@
                 >
             <div class="bookingid">
             </div>
-            <input type="submit" name="submit" value="Confirm Payment">
+            <button type="submit" class="btn btn-primary" name="submitDetails" value="Submit">Confirm Payment</button>
         </form>
 
     </div>

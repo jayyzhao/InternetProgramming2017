@@ -128,27 +128,26 @@ if(isset($_POST['formSubmit'])){
     include('navbar.php');
 
     echo "<body>";
-    echo '<div class="container">
+    echo '<div class="page-content col-md-10">
       <div class="col-md-12">
-        <h1>Avaliable Flights</h1><br/><br/>
+        <div class="header">Available Flights</div>
+        <div class="content">Here is the available flights that match your search</div>
 
-        <div class="col-md-2">
-        </div>
 
-        <div class="col-md-8">
+        <div class="col-md-12">
           <form id="flightsForm" class="form-inline" action="chooseSeats.php" method="POST">
           <div class="table-responsive">';
 
-      if($_POST['departFrom'] == "selectDeparture" && $_POST['destination'] == "selectDestination"){
-          echo "please choose at least one departure or one destination";
+            if($_POST['departFrom'] == "selectDeparture" && $_POST['destination'] == "selectDestination"){
+                echo "please choose at least one departure or one destination";
 
-      }
-      elseif($_POST['departFrom'] != "selectDeparture" && $_POST['destination'] == "selectDestination") {
-        $searchFlightsSQL = "SELECT * FROM poti.flights WHERE from_city ='" . $_POST['departFrom'] . "'";
-      }
-      elseif($_POST['departFrom'] == "selectDeparture" && $_POST['destination'] != "selectDestination"){
-        $searchFlightsSQL = "SELECT * FROM poti.flights WHERE to_city ='" .$_POST['destination'] ."'";
-      }
+            }
+            elseif($_POST['departFrom'] != "selectDeparture" && $_POST['destination'] == "selectDestination") {
+                $searchFlightsSQL = "SELECT * FROM poti.flights WHERE from_city ='" . $_POST['departFrom'] . "'";
+            }
+            elseif($_POST['departFrom'] == "selectDeparture" && $_POST['destination'] != "selectDestination"){
+                $searchFlightsSQL = "SELECT * FROM poti.flights WHERE to_city ='" .$_POST['destination'] ."'";
+            }
       else{
         $searchFlightsSQL = "SELECT * FROM poti.flights WHERE from_city ='" . $_POST['departFrom'] . "' AND to_city ='" .$_POST['destination'] ."'";
       }
@@ -185,7 +184,7 @@ if(isset($_POST['formSubmit'])){
                   <tbody>
                 </table>
               </div>
-                <div class="col-md-7 col-xs-offset-8">
+                <div class="col-md-8 col-xs-offset-8">
                   <a href="flights.php" class="btn btn-primary">New Search</a>
                   <button type="button" onclick="return checkCheckBoxes();" class="btn btn-primary">Choose Seats</button>
                 </div>
