@@ -33,10 +33,10 @@
 
   ?>
 
-  <div class="container">
-    <div class="header">Contact Us</div>
- 		<div class="content">Please complete your details</div>
-    <div class="personalDetails">
+  <div class="page-content col-md-10">
+    <div class="header" style="text-align: center;">Contact Us</div>
+ 		<div class="content" style="text-align: center;">Have a question? Send us an enquiry and we'll answer.</div>
+    <div class="well col-md-6">
 	 		<form class="contact-us" id="contact-us" name="contact-us"
 	 		action=""
 	 		method="POST"
@@ -64,7 +64,7 @@
 			 			<textarea class="form-control" rows="10" id="message" name="message" type="message" placeholder="Enter your Message" required></textarea>
 			 		</div>
         </div>
-        <input type="submit" name="submit" value="Send Email">
+        <button type="submit" class="btn btn-primary" name="submit" value="Send Email">Send Email</button>
 	 		</form>
   </div>
 </body>

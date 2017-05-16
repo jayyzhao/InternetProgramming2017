@@ -151,7 +151,7 @@ function bookMoreFlights(){
       include('navbar.php');
     ?>
 
-    <div class="container">
+    <div class="page-content col-md-10">
       <?php
       if(!isset($_SESSION['flightBooking'])){
         echo "You Have No Bookings!";
@@ -161,9 +161,9 @@ function bookMoreFlights(){
         echo '</form>';
       }
       else{
-        echo '<div class="col-md-12">
-          <h1>Your Bookings</h2><br/><br/>
-        </div>';
+        echo '
+          <div class="header">Your Bookings</div>
+            <div class="content">Here is your pending booking</div>';
         $i = 1;
         foreach($_SESSION['flightBooking'] as $flights=>$seats){
           $flightDetails = explode("," , $flights);
@@ -202,9 +202,11 @@ function bookMoreFlights(){
 
         echo '<form class="form-inline" id="searchFlights" action="personaldetails.php" method="POST">';
         echo '<input type="hidden" id="bookingid" name="bookingid" value="'. rand()   . '"/>';
-        echo '<button type="button" onclick="return clearFlights();" class="btn btn-primary pull-right">Clear All Booked Flights</button>';
-        echo '<button type="button" onclick="return proceedToPay();" class="btn btn-primary pull-right">Proceed to Checkout</button>';
-        echo '<button type="button" onclick="return bookMoreFlights();" class="btn btn-primary pull-right">Book More Flights</button>';
+        echo '<div class="actionButtons">
+            <button type="button" onclick="return clearFlights();" class="btn btn-primary pull-right">Clear All Booked Flights</button>
+            <button type="button" onclick="return proceedToPay();" class="btn btn-primary pull-right">Proceed to Checkout</button>
+            <button type="button" onclick="return bookMoreFlights();" class="btn btn-primary pull-right">Book More Flights</button>
+            </div>';
         echo '</form>';
 
       }

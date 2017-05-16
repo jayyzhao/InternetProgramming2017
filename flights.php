@@ -142,30 +142,25 @@ function checkToFrom(){
     <?php
       include('navbar.php');
     ?>
+    <div class="page-content col-md-10">
+      <div class="header">Search Your Flight</div>
+      <div class="content">Please choose your departure and destination city</div>
 
-    <div class="container">
-      <div class="col-md-12">
-        <h1>Search for a flight</h2><br/><br/>
-      </div>
 
-      <div class="col-md-2">
-      </div>
-
-    <form class="form-inline" id="searchFlights" action="searchFlights.php" method="POST">
+      <form class="form-inline" id="searchFlights" action="searchFlights.php" method="POST">
       <input type="hidden" name="formSubmit" value="1"/>
-      <div class="col-md-8">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="departFrom">Depart From:</label>
+      <div class="searchForm">
+        <div class="searchFormInner">
+          <div class="form-group searchDeparture">
+            <label for="departFrom">Depart From</label>
              <span id="txtHint"></span>
             <select class="form-control" name="departFrom" id="departFrom">
               <option id="selectDeparture" value="selectDeparture" selected>Please Select a Departure City</option>
               <?php  foreach ($departures as $dep) { echo "<option id=" . $dep . ">" . $dep . "</option>";}?>
             </select>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
+        
+          <div class="form-group searchDestination">
             <label for="destination">Destination</label>
             <select class="form-control" name="destination" id="destination">
               <option id="selectDestination" value="selectDestination" selected>Please Select a Destination City</option>
@@ -174,9 +169,7 @@ function checkToFrom(){
           </div>
         </div>
       </div><br/>
-      <div class="col-md-2">
-        <button type="button" onclick="return checkToFrom();" class="btn btn-primary pull-right">Search</button>
-      </div>
+        <button type="button" onclick="return checkToFrom();" class="btn btn-primary">Search Flights</button>
 
       </form>
 

@@ -131,10 +131,9 @@ function addToBooking(){
 }
 </script>
 
- <div class="container">
-   <div class="col-md-12">
-     <h1>Choose Your Seats</h2><br/><br/>
-   </div>
+ <div class="page-content col-md-10">
+   <div class="header">Personal Details</div>
+    <div class="content">Please complete your details</div>
    <div class="col-md-12">
     <form class="form-inline" id="searchFlights" action="payment.php" method="POST">
    <?php
@@ -197,12 +196,10 @@ function addToBooking(){
       echo '<input type="hidden" id="totalFlights" name="totalFlights" value="'. sizeOf($_POST['options'])   . '"/>';
       echo '<input type="hidden" id="bookingid" name="bookingid" value="'. rand()   . '"/>';
    ?><br/>
-   <div class="col-md-12">
+   <div class="totalSeats">
      Total Number of Seat: <span id="totalNumberOfSeats" class="numberOfSeats">0</span>
    </div>
- <div class="col-md-6">
    <button type="button" onclick="return addToBooking();" class="btn btn-primary pull-right">Add to Booking</button>
- </div>
  </form>
  </div>
    <div class="col-md-2">

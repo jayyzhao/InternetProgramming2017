@@ -83,11 +83,11 @@
                     </div>
 
                     <div class="datafield cvc col-md-3">
-                        <label>CVC</label>
-                        <input class="form-control" id="cvc" name="cvc" placeholder="CVC" type="password" required pattern="^\d{3}$" maxlength="3">
+                        <label>CVV Number</label>
+                        <input class="form-control" id="cvv" name="cvv" placeholder="CVV Number" type="password" required pattern="^\d{3}$" maxlength="3">
                     </div>
                 </div>
-                <input type="submit" name="submit" value="Review Booking">
+                <button type="submit"  class="btn btn-primary" name="submitPayment" value="Submit">Review Booking</button>
             </form>
         </div>
     </div>
