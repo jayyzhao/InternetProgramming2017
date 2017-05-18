@@ -1,0 +1,202 @@
+body {
+    min-height: 100%;
+    padding-top: 70px;
+    background-color: #fff;
+}
+
+.jumbotron.main {
+    background: url(https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/41/417/417355/leaves_233413234_p-f.jpg?1427197761) no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px;
+}
+
+.main-inner {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-title {
+    font-family: Oswald;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.page-content {
+    background: #fff;
+    padding: 20px;
+}
+
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    float: none!important;
+    margin: 0 auto;
+}
+
+.header {
+    font-family: Oswald;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.content {
+    padding: 10px 0;
+}
+
+.well {
+    background: #f7f7f7;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 20px;
+}
+
+th {
+    font-family: Oswald;
+    font-size: 16px;
+}
+
+/* Nav Bar */
+
+.navbar-default {
+    background-color: #2692d0;
+    border-color: #2692d0;
+}
+
+.navbar-header img {
+    height: 100%;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+    font-weight: bold;
+    font-family: Oswald;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background: #0184cd;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+    color: #333;
+    font-family: Oswald;
+    text-transform: uppercase;
+    font-size: 24px;
+    background: url(https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/41/417/417355/leaves_233413234_p-f.jpg?1427197761);
+    background-size: cover;
+    margin: 0 50px 0 0;
+}
+
+/* Button */
+.btn-primary {
+    font-family: Oswald;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #2692d0;
+    padding: 10px 20px;
+    margin: 10px 0;
+    width: 100%;
+}
+/* Flights.php */
+
+.searchForm {
+    background: url(https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/41/417/417355/leaves_233413234_p-f.jpg?1427197761) no-repeat;
+    padding: 100px 50px;
+    background-size: cover;
+}
+
+.searchFormInner {
+    padding: 20px;
+    background: #fff;
+    font-size: 0;
+}
+
+.searchFormInner .form-group {
+    width: 50%;
+    font-size: 14px;
+}
+
+.searchFormInner .form-group select {
+    width: 95%;
+}
+
+/* Search flights */
+
+#flightsForm .btn.btn-primary {
+    width: 48%;
+}
+
+
+/* Choose seats */
+
+.totalSeats {
+    font-size: 20px;
+}
+
+.numberOfSeats {
+    font-weight: bold;
+}
+
+/* Bookings */
+.actionButtons {
+    display: inline-block;
+    width: 100%;
+}
+
+.actionButtons button {
+    width: 30%;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+
+/*Personal Details */
+
+.form-group {
+    font-size: 0;
+}
+
+.datafield {
+    padding: 5px 20px 5px 0;
+    display: inline-block;
+}
+
+
+label {
+    font-family: Oswald;
+	width: 100%;
+    font-size: 16px;
+
+}
+
+input, select {
+    
+    display: inline-block!important;
+    width: 100%;
+}
+
+.optionalNote {
+    font-style: italic;
+}
+
+/* Payment */
+#expiryYear {
+    width: 50%;
+}
+
+#expiryMonth {
+    margin-right: 10px;
+    width: calc(50% - 10px);
+}

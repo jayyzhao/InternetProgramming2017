@@ -19,11 +19,14 @@
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Online Travel Agency</h1>
-        <h2>Internet Programming Autumn 2017</h2>
-        <p>This is website is created for Internet Programming Assignment 1 - Autumn 2017.</p>
-        <p>Please choose Book in the menu navigation to book a flight.</p>
+      <div class="jumbotron main">
+        <div class="main-inner">  
+          <div class="main-title">Palm Tree Airlines</div>
+          <h2>Internet Programming Autumn 2017</h2>
+          <p>This website is created for Internet Programming Assignment 1</p>
+          <p>UTS Autumn 2017</p>
+          <p>Click "SEARCH FLIGHT" to start searching and booking a flight.</p>
+        </div>
       </div>
 
     </div> <!-- /container -->
